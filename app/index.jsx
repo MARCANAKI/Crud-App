@@ -25,9 +25,9 @@ export default function Index() {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
-  const renderItem={{ item }} => (
+  const renderItem=({ item }) => (
     <View style={styles.todoItem}>
-      <Text style= {[styles.todoText, item.completed ]}>{item.title}</Text>
+      <Text style= {[styles.todoText, item.completed && styles.completedText ]}>{item.title}</Text>
       <Pressable>
       <MaterialCommunityIcons name="delete-circle" size={36} color="red" selectable= {undefined} />
       </Pressable>
